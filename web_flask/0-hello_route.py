@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 from flask import Flask
+""" Script that strat Flask """
 
 app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
+    """ Create a prompt for Hello HBNB"""
     return 'Hello HBNB!'
 
 if __name__ == '__main__':
