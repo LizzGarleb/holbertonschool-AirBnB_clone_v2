@@ -4,6 +4,7 @@
 from flask import Flask, render_template
 from models import storage
 from models.state import State
+from models.city import City
 
 
 app = Flask(__name__)
@@ -21,8 +22,8 @@ def states_list():
 def cities_by_states():
     """ Route that display a HTML page with a list of cities
     objects sorted by name """
-    city_li = storage.all(State).values()
-    return render_template('8-cities_by_states.html', cities=city_li)
+    city_li = storage.all(City).values()
+    return render_template('8-cities_by_states.html', states=city_li)
 
 
 @app.teardown_appcontext
@@ -33,4 +34,4 @@ def teardown_appcontext(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5002)
