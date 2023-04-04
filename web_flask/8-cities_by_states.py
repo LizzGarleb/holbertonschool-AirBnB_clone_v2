@@ -9,18 +9,24 @@ app = Flask(__name__)
 
 @app.route('/states_list', strict_slashes=False)
 def states_list():
+    """ Route that display a HTML page with a list of states
+    objects sorted by name """
     state_li = storage.all(State).values()
     return render_template('7-states_list.html', states=state_li)
 
 
 @app.route('cities_by_states', strict_slashes=False)
 def cities_by_states():
+    """ Route that display a HTML page with a list of cities
+    objects sorted by name """
     city_li = storage.all(State).values()
     return render_template('8-cities_by_states.html', cities=city_li)
 
 
 @app.teardown_appcontext
 def teardown_appcontext(exception):
+    """ Function that removes the current SQL Alchemy Session after each
+    request. """
     storage.close()
 
 
