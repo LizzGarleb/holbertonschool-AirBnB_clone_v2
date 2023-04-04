@@ -28,12 +28,13 @@ def cities_by_states():
 @app.route('/states', strict_slashes=False)
 @app.route('/states/<id>', strict_slashes=False)
 def states(id=None):
-    states_dict = storage.all(State)
+    state_dic = storage.all(State)
     state = None
-    for obj in states_dict.values():
+    for obj in state_dic.values():
         if obj.id == id:
             state = obj
-    return render_template('9-states.html', states=states_dict ,state=state, id=id)
+            break
+    return render_template('9-states.html', states=state_dic, id=id, state=state)
 
 
 @app.teardown_appcontext
