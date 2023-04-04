@@ -62,7 +62,7 @@ def teardown_appcontext(exception):
 def cities_by_state():
     """Display a HTML page"""
     states_li = storage.all(State).values()
-    return render_template('8-cities_by_state.html', cities=states_li)
+    return render_template('8-cities_by_state.html', states=states_li)
 
 
 if __name__ == '__main__':
