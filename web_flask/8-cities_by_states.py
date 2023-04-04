@@ -61,8 +61,8 @@ def teardown_appcontext(exception):
 @app.route('cities_by_state', strict_slashes=False)
 def cities_by_state():
     """Display a HTML page"""
-    states_li = storage.all(State).values()
-    return render_template('8-cities_by_state.html', states=states_li)
+    cities_li = storage.all(State).values()
+    return render_template('8-cities_by_state.html', city=cities_li)
 
 
 if __name__ == '__main__':
