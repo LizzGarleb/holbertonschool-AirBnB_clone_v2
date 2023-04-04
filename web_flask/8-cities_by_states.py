@@ -22,7 +22,7 @@ def states_list():
 def cities_by_states():
     """ Route that display a HTML page with a list of cities
     objects sorted by name """
-    city_li = storage.all(City).values()
+    city_li = storage.all(State).values()
     return render_template('8-cities_by_states.html', states=city_li)
 
 
@@ -34,4 +34,4 @@ def teardown_appcontext(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    app.run(host='0.0.0.0', port=5005, debug=True)
