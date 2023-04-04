@@ -20,7 +20,7 @@ def states_list():
 def cities_by_state():
     """Display a HTML page"""
     cities_li = storage.all(State).values()
-    return render_template('8-cities_by_state.html', city=cities_li)
+    return render_template('8-cities_by_states.html', city=cities_li)
 
 
 @app.teardown_appcontext
