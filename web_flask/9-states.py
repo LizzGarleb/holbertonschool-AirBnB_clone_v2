@@ -33,8 +33,8 @@ def states(id=None):
     for obj in state_dic.values():
         if obj.id == id:
             state = obj
-            break
-    return render_template('9-states.html', states=state_dic, id=id, state=state)
+    return render_template('9-states.html', states=state_dic, id=id,
+                           state=state)
 
 
 @app.teardown_appcontext
@@ -45,4 +45,4 @@ def teardown_appcontext(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5005, debug=True)
